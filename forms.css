@@ -1,0 +1,92 @@
+.headingbox {
+    width: 100%;
+    background-color: #343436;
+    border-radius: 8px;
+    line-height: 35px;
+    margin-left: 65px;
+}
+.headingbox-mainMemebr {
+    width: 100%;
+    background-color: #343436;
+    border-radius: 8px;
+}
+.heading {
+    color: #fff;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    font-weight: 100;
+    font-size: 18px;
+}
+.heading-saving {
+    background-color: #343436;
+    width: 90%;
+    line-height: 35px;
+    color: #ffffff;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    font-weight: 100;
+    font-size: 14px;
+    border-radius: 8px;
+}
+
+.heading-trad {
+    background-color: #ba0c35;
+    width: 90%;
+    line-height: 35px;
+    color: #ffffff;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    font-weight: 100;
+    font-size: 14px;
+    border-radius: 8px;
+}
+.heading-edge {
+    background-color: #ba0c35;
+    width: 90%;
+    line-height: 35px;
+    color: #ffffff;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    font-weight: 100;
+    font-size: 14px;
+    border-radius: 8px;
+}
+.heading-edge {
+    background-color: #fbc100;
+    width: 90%;
+    line-height: 35px;
+    color: #ffffff;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    font-weight: 100;
+    font-size: 14px;
+    border-radius: 8px;
+}
+.heading-hospital {
+    background-color: #af9e88;
+    width: 90%;
+    line-height: 35px;
+    color: #ffffff;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    font-weight: 100;
+    font-size: 14px;
+    border-radius: 8px;
+}
+.position {
+    margin-right: 10px;
+}
+.btn-add {
+    background-color: hsl(145, 88%, 39%);
+    color: #fff;
+}
+.btn-add:hover {
+    background-color: #025326;
+    color: #ffffff;
+}

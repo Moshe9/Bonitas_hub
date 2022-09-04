@@ -1,0 +1,448 @@
+body{
+font-size: 14px;
+}
+
+/** style containers **/
+.container{
+display: flex;
+flex-flow: row wrap;
+font-family: -apple-system-ui;
+}
+
+.full{
+flex-basis: 100%;
+margin: 10px 0;
+}
+
+.text input{
+width: 100%;
+height: 33px;
+}
+
+.half{
+flex-basis: 50%;
+margin: 10px 0;
+}
+
+.half .full.text.flexrow{
+flex-basis: 99%;
+}
+
+.half .input-field{
+margin: 10px 6px;
+}
+
+.half select, .quart select{
+height: 37px;
+width: 100%;
+background: #fff;
+border: 1px solid #d5d5d5;
+}
+
+.full select{
+height: 37px;
+width: 99.6%;
+background: #fff;
+border: 1px solid #d5d5d5;
+}
+
+.half.rightside select{
+    height: 37px;
+    width: 100%;
+    background: #fff;
+    border: 1px solid #d5d5d5;
+}
+
+.quart{
+width: 25%;
+margin: 10px 0;
+}
+
+.fifth{
+width: 20%;
+margin: 10px 5px 10px 0;
+}
+
+.thirty{
+width: 34%;
+margin: 10px 0;
+}
+
+.thirty7{
+width: 41.2%;
+margin: 10px 0.5%;
+}
+
+.thirty.text.flexrow{
+margin: 10px 5px 10px 0;
+}
+
+.fifteen{
+width: 15%;
+margin: 10px 5px 10px 0;
+}
+
+.fifteen.flexrow.rightside{
+width: 15.2%;
+margin: 10px 0;
+}
+
+.quart .input-field{
+margin: 10px 6px;
+}
+
+.fifth .input-field{
+margin: 10px 6px;
+}
+
+.fifth.text.flexrow .input-field input{
+height: 39px;
+width: 50%;
+}
+
+.fifth.text.flexrow .gen.input-field{
+width: 30%;
+height: 39px;
+margin: 0;
+}
+
+.fifth.text.flexrow .input-field label{
+vertical-align: text-bottom;
+line-height: 39px;
+}
+
+.fifth.text.flexrow label{
+width: 100%;
+}
+
+.fifth.text.flexrow select{
+width: 100%;
+background: #fff;
+height: 39px;
+border: 1px #d1d1d1 solid;
+}
+
+.threeq{
+width: 75%;
+margin: 10px 0;
+}
+
+.thirty7.nolabel input{
+    margin-top: 17px;
+}
+
+.threeq .input-field{
+margin: 10px 6px;
+}
+
+.inside{
+padding: 15px;
+}
+
+.half.left{
+display: flex;
+flex-basis: 48%;
+justify-content: flex-start;
+padding-left: 25px;
+}
+
+.half.right{
+display: flex;
+flex-basis: 48%;
+justify-content: flex-end;
+padding-right: 25px;
+}
+
+.flexrow{
+display: flex;
+flex-flow: row wrap;
+}
+
+/** style step counter **/
+.steps{
+display: flex;
+flex-grow: 26;
+justify-content: center;
+}
+
+.step{
+flex-flow: column wrap;
+text-align: center;
+display: flex;
+justify-content: center;
+margin: 20px 5px;
+}
+
+.stepsep{
+flex-grow: 1;
+height: 58px;
+border-bottom: #000000 solid 2px;
+}
+
+/** make circles that indicate the steps of the form: **/
+.stepi {
+height: 30px;
+width: 30px;
+margin: 15px;
+background-color: #bbbbbb;
+border: none;
+border-radius: 50%;
+display: inline-block;
+opacity: 0.5;
+}
+
+.stepi.one{
+background-color: #b80a2e;
+opacity: 1;
+}
+
+/** mark the active step: **/
+.stepi.active {
+background-color: #1168d7 !important;
+opacity: 1;
+}
+
+/** mark the steps that are finished and valid: **/
+.stepi.finish {
+background-color: #04AA6D;
+opacity: 1;
+}
+
+/** style the form **/
+
+.input-field{
+margin: 10px 2px;    
+}
+
+.input-field.text input{
+line-height: 35px;
+margin-top: 10px;
+}
+
+.input-field.text.full input{
+width: 100%;
+}
+
+.input-field.text{
+padding: 0 8px 0 0;
+}
+
+.full label{
+font-size: 14px;
+vertical-align: text-top;
+}
+
+.half label{
+font-size: 14px;
+vertical-align: text-top;
+}
+
+.date label, select option{
+font-size: 14px;
+}
+
+.date input{
+height: 33px;
+}
+
+.prev{
+display:none;
+width: 49%;
+text-align: center;
+float: left;
+line-height: 30px;
+border-radius: 8px;
+margin: 6px 6px 6px 0;
+}
+
+.nxt{
+width: 49%;
+text-align: center;
+float: right;
+line-height: 30px;
+border-radius: 8px;
+margin: 6px 0 6px 6px;
+}
+
+.prev:hover, .nxt:hover{
+background-color: #08468c;
+}
+
+/** style the input fields 
+input {
+padding: 10px;
+width: 100%;
+font-size: 17px;
+font-family: Raleway;
+border: 1px solid #aaaaaa;
+}**/
+
+/** mark input boxes that gets an error on validation: **/
+input.invalid, select.invalid{
+background-color: #ffdddd;
+}
+
+/* hide all steps by default: */
+.tab {
+display: none;
+}
+
+.tab.one{
+display: block;
+}
+
+/** colours **/
+.maingrey{
+background-color: #3b3838;
+color: #fff;
+font-weight: 500;
+font-size: 13px;
+}
+.mainblue{
+background-color: #8590BF;
+color: #ffffff;
+font-weight: 500;
+font-size: 13px;
+}
+.mainred{
+background-color: #b80a2e;
+color: #fff;
+font-weight: 500;
+font-size: 13px;
+}
+.stone{
+background-color: #af9e88;
+color: #fff;
+font-weight: 500;
+font-size: 13px;
+}
+.grey{
+background-color: #d1d0ce;
+color: #fff;
+font-weight: 500;
+font-size: 13px;
+}
+.yellow{
+background-color: #fbc100;
+color: #fff;
+font-weight: 500;
+font-size: 13px;
+}
+.blue{
+background-color: #08468c;
+color: #fff;
+font-weight: 500;
+font-size: 13px;
+}
+
+.headingbox.left{
+line-height: 25px;
+text-align: center;
+width: 100%;
+margin-right: 5px;
+height: 25px;
+}
+.headingbox.right{
+line-height: 25px;
+text-align: center;
+width: 100%;
+margin-left: 5px;
+height: 25px;
+}
+
+.full .headingbox{
+line-height: 25px;
+text-align: center;
+width: 100%;
+height: 25px;
+}
+
+.date input{
+width: 96%;
+}
+
+.leftmargin{
+margin-right:10px;
+}
+
+.text.leftmargin{
+width: 74%;
+}
+
+.rightmargin{
+margin-left: 5px;
+}
+
+.half.text .input-field{
+width: 30%;
+height: 39px;
+}
+
+.half.text .input-field input{
+width: 12%;
+height: 33px;
+}
+
+.half.text .input-field label{
+line-height: 33px;
+}
+
+.half.text.flexrow.rightside{
+width: 49%;
+flex-basis: 49%;
+}
+
+.half.text.flexrow.redbox{
+width: 49%;
+flex-basis: 49%;
+height: 55px;
+text-align: center;
+color: #ffffff;
+font-size: 18px;
+line-height: 55px;
+font-weight: 900;
+margin-top: 22px;
+background: #08468c;
+}
+
+.half.text.flexrow.rightside label{
+width: 100%;
+vertical-align: text-bottom;
+}
+
+.half.text.flexrow.rightside .input-field{
+margin: 0;
+}
+
+.half.text.flexrow{
+flex-basis: 49.5%;
+margin: 10px 5px 10px 0;
+}
+
+.quart.text.flexrow{
+flex-basis: 24.5%;
+margin: 10px 5px 10px 0;
+}
+
+.half.flexrow input.editbutt{
+width: 95%;
+height: 33px;
+background: #f5f5f5;
+border-radius: 8px;
+border: 1px solid #d1d1d1;
+margin-top: 5%;
+}
+.half.flexrow input.editbutt:hover{
+width: 95%;
+height: 33px;
+background: #c5c5c5;
+border-radius: 8px;
+border: 1px solid #d1d1d1;
+}
+
+.depstart{
+    width: 100%;
+    height: auto;
+    margin: 0px;
+    padding: 0px;
+}

@@ -201,13 +201,13 @@ body {
 }
 
 .stepi.one {
-    background-color: #b80a2e;
+    background-color: #01468c;
     opacity: 1;
 }
 
 /** mark the active step: **/
 .stepi.active {
-    background-color: #b80a2e !important;
+    background-color: #01468c !important;
     opacity: 1;
 }
 
@@ -345,7 +345,7 @@ select.invalid {
     font-size: 13px;
 }
 .mainred {
-    background-color: #b80a2e;
+    background-color: #01468c;
     color: #fff;
     font-weight: 500;
     font-size: 13px;
@@ -369,16 +369,10 @@ select.invalid {
     font-size: 13px;
 }
 .blue {
-    background-color: #5f8197;
-    color: #fff;
-    font-weight: 500;
-    font-size: 13px;
-}
-.fed_blue {
     background-color: #01468c;
     color: #fff;
     font-weight: 500;
-    font-size: 13px; 
+    font-size: 13px;
 }
 
 .headingbox.left {
@@ -460,7 +454,7 @@ select.invalid {
     line-height: 55px;
     font-weight: 900;
     margin-top: 22px;
-    background: #b80a2e;
+    background: #01468c;
 }
 
 .half.text.flexrow.rightside label {
@@ -519,7 +513,7 @@ select.invalid {
     font-family: "Muli, sans-serif !important";
 }
 .btn {
-    background: #ba0c35;
+    background: #01468c;
     color: #fff;
 }
 .btn:hover {

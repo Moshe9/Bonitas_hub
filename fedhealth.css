@@ -1,0 +1,607 @@
+.nav-wrapper {
+    background-color: #01468c;
+}
+.fed_nav-wrapper {
+    background-color: #01468c;
+}
+
+.logo {
+    padding: 8px 0px 12px 0px;
+    margin-left: 50px;
+}
+
+.page-footer {
+    background-color: #343436;
+    bottom: 0;
+    position: fixed;
+    width: 100%;
+}
+.user-info{
+    width: 300px;
+}
+@media screen and (max-width: 1080px) {
+    .banner {
+        float: right;
+        top: 0;
+        bottom: 0;
+        margin-right: 0;
+    }
+    .banner-image {
+        width: 60%;
+        height: auto;
+        float: right;
+        margin-top: 0px;
+        position: absolute;
+        margin-right: 0;
+    }
+    .fed_banner-image {
+        width: 50%;
+        height: auto;
+        float: right;
+        margin-top: 0px;
+        position: absolute;
+        margin-right: 0;
+    }
+    .marketing-banner {
+        float: right;
+        top: 0;
+        bottom: 0;
+    }
+    .marketing-image {
+        width: 60%;
+        height: auto;
+        float: right;
+        margin-top: 0px;
+        position: absolute;
+        right: 0;
+        margin-right: 10px;
+    }
+}
+.user-avatar {
+    width: 160px;
+    height: auto;
+    border: 4px solid #01468c;
+    margin-top: 30px;
+    margin-left: 50px;
+}
+@media screen and (min-width: 1080px) {
+    .banner {
+        float: right;
+        top: 0;
+        bottom: 0;
+    }
+    .banner-image {
+        width: 60%;
+        height: auto;
+        float: right;
+        margin-top: 10px;
+        position: absolute;
+        margin-right: 0;
+    }
+    .fed_banner-image {
+        width: 50%;
+        height: auto;
+        float: right;
+        margin-top: 10px;
+        position: absolute;
+        margin-right: 0;
+    }
+    .marketing-banner {
+        float: right;
+        top: 0;
+        bottom: 0;
+    }
+    .marketing-image {
+        width: 60%;
+        height: auto;
+        float: right;
+        margin-top: 10px;
+        position: absolute;
+        right: 0;
+        margin-right: 10px;
+    }
+}
+
+#main {
+    padding-left: 0px;
+}
+
+.username {
+    font-size: 25px;
+    text-transform: uppercase;
+    color: #01468c;
+    margin-bottom: 0;
+    line-height: 20px;
+    font-weight: bold;
+}
+
+.brokerinfo {
+    font-size: 25px;
+    text-transform: uppercase;
+    color: #343436;
+    font-weight: bold;
+    margin: 0;
+    padding-top: 0;
+}
+
+.paragraphs {
+    margin-top: 80px;
+}
+.horizontal_line {
+    width: 450px;
+    float: left;
+    margin-left: 65px;
+    color: #858585;
+}
+
+.title {
+    text-transform: uppercase;
+    margin-left: 65px;
+    font-weight: bold;
+    color: #343436;
+}
+
+.btn-bonitas {
+    background-color: #01468c;
+    color: #fff;
+    width: 180px;
+    border-radius: 16px;
+}
+.btn-Fedhealth {
+    background-color: #01468c;
+    color: #fff;
+    width: 430px;
+    border-radius: 16px;
+}
+.btn-Fedhealth:hover {
+    background-color: #000;
+    color: #fff;
+    width: 430px;
+    border-radius: 16px;
+}
+.btn-bonitas-tertiary {
+    background-color: #01468c;
+    color: #fff;
+    border-radius: 16px;
+}
+.btn-bonitas-tertiary:hover {
+    background-color: #343436;
+    color: #fff;
+    border-radius: 16px;
+}
+.btn-bonitas:hover {
+    background-color: #343436;
+    color: #fff;
+    width: 180px;
+    border-radius: 16px;
+}
+
+.btn-individual {
+    margin-left: 65px;
+}
+
+.btn-bonitas-secondary {
+    background-color: #343436;
+    color: #fff;
+    width: 430px;
+    border-radius: 16px;
+}
+.btn-bonitas-secondary:hover {
+    background-color: #01468c;
+    color: #fff;
+    width: 430px;
+    border-radius: 16px;
+}
+.btn-bonitas-view {
+    background-color: #343436;
+    color: #fff;
+    border-radius: 16px;
+}
+.btn-bonitas-view:hover {
+    background-color: #01468c;
+    color: #fff;
+    border-radius: 16px;
+}
+
+.table-head {
+    background-color: #343436;
+    color: white;
+    border: none !important;
+    border-radius: 0px !important;
+    text-transform: uppercase;
+    font-size: 12px;
+}
+.table-t {
+    background-color: #343436;
+    color: white;
+    border: none !important;
+    border-radius: 0px !important;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.table-title {
+    background-color: #01468c;
+    color: white;
+    border: none !important;
+    border-radius: 0px !important;
+    text-align: center;
+    text-transform: uppercase;
+}
+.fed_table-title {
+    background-color: #01468c;
+    color: white;
+    border: none !important;
+    border-radius: 0px !important;
+    text-align: center;
+    text-transform: uppercase;
+}
+.table-title-allApp {
+    background-color: #01468c;
+    color: white;
+    border: none !important;
+    border-radius: 0px !important;
+    text-transform: uppercase;
+    text-align: center;
+}
+.striped {
+    border: none !important;
+    border-radius: 0px !important;
+    margin-left: 35px;
+    text-transform: uppercase;
+}
+.striped td {
+    font-size: 12px;
+}
+
+.table-title-third {
+    background-color: #e6d021;
+    color: white;
+    border: none !important;
+    border-radius: 0px !important;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.complete-action {
+    color: green;
+    font-weight: bold;
+}
+
+.action {
+    color: red;
+    font-weight: bold;
+}
+
+.elements {
+    color: #01468c;
+    font-size: 25px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-left: 50px;
+}
+
+.marketing-banner {
+    float: right;
+    top: 0;
+    bottom: 0;
+}
+
+.marketing-image {
+    width: 60%;
+    height: auto;
+    float: right;
+    position: absolute;
+    margin-top: 25px;
+    right: 0;
+    margin-right: 30px;
+}
+
+.table {
+    width: 30%;
+    text-transform: uppercase;
+    font-size: 12px;
+    height: 280px;
+}
+
+.td-col {
+    text-align: right;
+}
+
+.striped td {
+    padding-left: 20px;
+}
+
+.headings {
+    color: #343436;
+    font-weight: bold;
+    font-size: 18px;
+    text-transform: uppercase;
+    margin-left: 65px;
+    margin-top: 30px;
+}
+.head {
+    color: #343436;
+    font-weight: bold;
+    font-size: 25px;
+    text-transform: uppercase;
+    margin-left: 65px;
+    margin-top: 30px;
+}
+.search-container form {
+    position: relative;
+}
+.search-container form button {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 50px;
+    background: transparent;
+    border: transparent;
+    font-size: 20px;
+    color: #343436;
+    cursor: pointer;
+    outline: 0;
+}
+.select {
+    background-color: #343436;
+    border: none !important;
+    border-radius: 0px !important;
+    text-transform: uppercase;
+    height: 0%;
+}
+
+.snaps {
+    margin-left: 65px;
+}
+
+.brochure-img {
+    margin-right: 15px;
+    margin-bottom: 10px;
+}
+
+/* Video Slider Css Starts */
+.slick-slide {
+    margin: 0px 5px;
+}
+
+.logo-carousel {
+    overflow: inherit;
+    border-top: 1px solid #353535;
+    border-bottom: 1px solid #353535;
+    bottom: 0;
+}
+
+.slick-slide img {
+    width: 100%;
+}
+
+.slick-track::before,
+.slick-track::after {
+    display: table;
+    content: "";
+}
+
+.slick-track::after {
+    clear: both;
+}
+
+.slick-track {
+    padding: 1rem 0;
+}
+
+.slick-loading .slick-track {
+    visibility: hidden;
+}
+
+.slick-slide.dragging img {
+    pointer-events: none;
+}
+
+.slick-loading .slick-slide {
+    visibility: hidden;
+}
+
+.slick-arrow {
+    position: absolute;
+    top: 50%;
+    background: url(https://raw.githubusercontent.com/solodev/infinite-logo-carousel/master/images/arrow.svg?sanitize=true)
+        center no-repeat;
+    color: #fff;
+    filter: invert(77%) sepia(32%) saturate(1%) hue-rotate(344deg)
+        brightness(105%) contrast(103%);
+    border: none;
+    width: 2rem;
+    height: 1.5rem;
+    text-indent: -10000px;
+    margin-top: -16px;
+    z-index: 99;
+}
+
+.slick-arrow.slick-next {
+    right: -40px;
+    transform: rotate(180deg);
+}
+
+.slick-arrow.slick-prev {
+    left: -40px;
+}
+
+/* Media Queries */
+
+@media (max-width: 768px) {
+    .slick-arrow {
+        width: 1rem;
+        height: 1rem;
+    }
+}
+
+.row {
+    overflow: hidden;
+}
+
+/* JsFiddle Example only/don't use */
+.logo-carousel {
+    margin-top: 32px;
+}
+
+/* Video slick css ends */
+.accountForm {
+    align-self: center;
+    width: 50%;
+    height: 100%;
+    margin-left: 600px;
+}
+.centered-form {
+    align-content: center;
+    width: 60%;
+    height: 80%;
+    margin-left: 600px;
+}
+.subtitle{
+    text-transform: uppercase;
+    margin-left: 65px;
+    font-weight: bold;
+    color: #343436;
+    font-size: 14px;
+}
+.custom-btn-query {
+    margin-right: 650px;
+    background-color: rgba(88, 87, 87, 0.699);
+    background-color: #01468c;
+}
+.custom-btn-query:hover {
+    background-color: #353535;
+}
+.err_404 {
+    height: 80%;
+}
+.error {
+    font-size: 30px;
+    text-align: center;
+    color: #01468c;
+    text-transform: uppercase;
+    height: 500px;
+    line-height: 500px;
+}
+.badge {
+    border-radius: 5px;
+    background-color: #fff;
+    color: green;
+    line-height: 20px;
+}
+.badge_allAPP {
+    border-radius: 10px;
+    background-color: #fff;
+    color: green;
+    width: 50%;
+    margin-left: 30%;
+    line-height: 30px;
+}
+.view-table {
+    width: 90%;
+    margin-left: 65px;
+}
+/* width */
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #01468c;
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #343436;
+}
+.btn-position {
+    float: right;
+    margin-right: 0px;
+}
+.table-footer {
+    background-color: #727272;
+    text-align: center;
+}
+.table-footer a {
+    color: #363636;
+}
+
+.action-btns {
+    margin-left: 200px;
+}
+.validation-button{
+    background-color: #e6d021;
+    color: #fff;
+    width: 100px;
+    height: 33px;
+    border-radius: 8px;
+    border: 1px solid #e6d021;
+    margin-top: 20px;
+    float: right;
+   box-shadow: 2px 2px 5px grey;
+}
+.validation-button:hover{
+    background-color: #c4b01b;
+    color: #fff;
+    width: 100px;
+    height: 33px;
+    border-radius: 8px;
+    border: 1px solid #e6d021;
+    margin-top: 20px;
+    float: right;
+   box-shadow: 2px 2px 5px grey;
+}
+.validate-banking{
+    background-color: #e6d021;
+    color: #fff;
+    width: 100px;
+    height: 33px;
+    border-radius: 8px;
+    border: 1px solid #e6d021;
+   box-shadow: 2px 2px 5px grey;
+}
+.validate-banking:hover{
+    background-color: #c4b01b;
+    color: #fff;
+    width: 100px;
+    height: 33px;
+    border-radius: 8px;
+    border: 1px solid #e6d021;
+   box-shadow: 2px 2px 5px grey;
+}
+
+.charts{
+    margin-left: 100px;
+}
+
+.table-width{
+    width: 450px;
+}
+
+.table-title-group {
+    background-color: #343436;
+    color: white;
+    border: none !important;
+    border-radius: 0px !important;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.depsTable th{
+    background-color: #01468c;
+    color: white;
+    /* border: 1px solid #343436; */
+}
+
+
+
