@@ -1,0 +1,216 @@
+
+@extends('hub.hub_layout')
+@section('content')
+
+<style>
+    /* body {font-family: Arial;} */
+
+    /* Style the tab */
+    .tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+    }
+
+    /* Style the buttons inside the tab */
+    .tab button {
+    background-color: #ddd;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 17px;
+    color: #ffffff;
+    }
+
+    /* Change background color of buttons on hover */
+    .tab button:hover {
+    background-color: #343436;
+    }
+
+    /* Create an active/current tablink class */
+    .tab button.active {
+    background-color: #ba0c35;
+    color: #ffffff;
+    }
+
+    /* Style the tab content */
+    .tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+    }
+</style>
+<!-- BEGIN: Page Main-->
+<?php
+    $brokercode = Session::get('brokercode');
+    $sessionID = Session::get('id');
+    $username = Session::get('username');
+?>
+@foreach($userInfo as $user)
+
+@endforeach
+<div id="main">
+    <div class="row">   
+    {{-- @foreach ($userInfo as $user)      --}}
+      <div class="col sm-8">
+        <img src="{{ $user->image }}"  alt="AVATAR" class="user-avatar">
+      </div>
+    {{-- @endforeach --}}
+      <div class="col sm-8 user-info">
+        <div class="paragraphs">
+            <p class="username">{{ $username }}</p>
+            <p class="brokerinfo">{{ $user->brokerhousename }}</p>
+        </div>
+      </div>
+      <div class="col sm-12">
+            <div class="banner">
+                <img src="{{asset('frontend/images/bonitas_assets/Hub_Banner-May_2022.png')}}" alt="" class="banner-image">
+            </div>
+        </div>
+    </div>
+    <hr class="horizontal_line">
+    <div class="col sm-8">
+        <p class="title">Application Forms</p>
+        <a href="{{url('/individual-form')}}" class="btn btn-bonitas btn-individual">
+            INDIVIDUAL
+        </a>
+        <a href="{{url('/group')}}" class="btn btn-bonitas btn-individual">
+            GROUP
+        </a>
+        {{-- <p>
+            <a href="#" class="btn btn-bonitas-secondary btn-individual">
+            PDF APPLICATIONS
+            </a>
+        </p> --}}
+    </div>
+    <div class="row">
+         <hr class="horizontal_line">
+    </div>
+    <div class="row">
+        <p class="title"> Group Applications Status</p>
+    </div>
+    <div class="row">
+        <div class="row">
+            <div class="col sm-8 mb-3">
+                <table class="striped ">
+                    <thead class="table-head">
+                    <?php
+                                
+                    //Group Application Info
+                    $submitted_group = DB::table('grp_advisors')
+                                            ->join('grp_members', 'grp_advisors.user_id', '=', 'grp_members.user_id')
+                                            ->where('grp_advisors.status',1)
+                                            ->where('grp_advisors.brokercode', $brokercode)
+                                            ->orderby('grp_advisors.updated_at','desc')
+                                            ->orderBy('grp_advisors.user_id','DESC')
+                                            ->limit(20)
+                                            ->get();
+                    
+                    $additional_group_info =DB::table('grp_advisors')
+                                        ->join('grp_members', 'grp_advisors.user_id', '=', 'grp_members.user_id')
+                                        ->where('grp_advisors.status',-1)
+                                        ->where('grp_advisors.brokercode', $brokercode)
+                                        ->orderby('grp_advisors.updated_at','desc')
+                                        ->orderBy('grp_advisors.user_id','DESC')
+                                        ->limit(20)
+                                        ->get();
+                    $pending_group_apps = DB::table('grp_advisors')
+                                    ->join('grp_members', 'grp_advisors.user_id', '=', 'grp_members.user_id')
+                                    ->where('grp_advisors.status',0)
+                                    ->where('grp_advisors.brokercode', $brokercode)
+                                    ->orderby('grp_advisors.updated_at','desc')
+                                    ->orderBy('grp_advisors.user_id','DESC')
+                                    ->limit(20)
+                                    ->get();
+                    $count_group = DB::table('grp_advisors')
+                                ->where('status',1)
+                                ->where('grp_advisors.brokercode', $brokercode)
+                                ->count();
+                                
+                    $count = $count_group;
+                    ?>
+                    <tr>
+                        <th colspan='3' class="table-title"> Submitted Applications</th>
+                        <th class="table-title"><div class="badge"> New |{{$count}}</div></th>
+                    </tr>
+                    <tr style="font-size: 11px;">
+                        <th>Member Name</th>
+                        <th>Submission Date</th>
+                        <th>Captured By</th>
+                        <th></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    @foreach($submitted_group as $application)
+                    <tr>
+                        <td>{{strtok($application->main_firstname, ' ')}}</td>
+                        <td>{{$application->created_at}}</td>
+                        <td>{{strtok($application->capturedby, ' ')}}</td>
+                        <td > <a href="{{('/view-submitted-group/'.$application->user_id)}}" class="complete-action"><i class="fa fa-eye fa-lg"> </i> View</a></td>
+                    </tr>
+                    @endforeach
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="4" class="table-footer"><a href="{{url('/all-submitted')}}">Click to view all submitted info</a></td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+            <div class="col sm-8 mb-3">
+                <table class="striped">
+                    <thead class="table-head">
+                    <tr>
+                        <th colspan='3' class="table-title"> Additional info requred</th>
+                        <th  class="table-title"></th>
+                    </tr>
+                    <tr style="font-size: 11px;">
+                        <th>Member Name</th>
+                        <th>Submission Date</th>
+                        <th>Captured By</th>
+                        <th></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                    @foreach($additional_group_info as $info)
+                    <tr>
+                        <td>{{strtok($info->main_firstname, ' ')}}</td>
+                        <td>{{$info->created_at}}</td>
+                        <td>{{strtok($info->capturedby, ' ')}}</td>
+                        <td > <a href="{{('/view-submitted-group/'.$info->user_id)}}" class="action"><i class="fa fa-eye fa-lg"> </i> View</a></td>
+                    </tr>
+                    @endforeach
+                </table>
+            </div>
+            <div class="col sm-8 mb-3">
+                <table class="striped">
+                    <thead class="table-head">
+                    <tr>
+                        <th colspan='3' class="table-title-third"> inprogress Applications</th>
+                    </tr>
+                    <tr style="font-size: 11px;">
+                        <th>Member Name</th>
+                        <th>Created Date</th>
+                        <th></th>
+                    </tr>
+                    </thead>
+                    @foreach($pending_group_apps as $pend)
+                    <tbody>
+                    <tr>
+                        <td>{{strtok($pend->main_firstname, ' ')}}</td>
+                        <td>{{$pend->updated_at}}</td>
+                        <td > <a href="{{('/edit-group/'.$pend->user_id)}}" class="action"><i class="fa fa-pencil fa-lg"> </i> Edit</a></td>
+                    </tr>
+                    @endforeach
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+@endsection
