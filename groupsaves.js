@@ -1,0 +1,433 @@
+function db_saves()
+{
+    if(currentTab == 0){
+        currenttab = currentTab;
+        userId = document.getElementById('userid').value;
+        medicalstart = document.getElementById('medstartdate').value;
+        capturedby = document.getElementById('capturedname').value;
+        brokercode = document.getElementById('broker-code').value;
+        paypointcode = document.getElementById('advisor-paypointcode').value;
+        brokeragename = document.getElementById('advisor-brokeragename').value;
+        brokername = document.getElementById('advisor-namesurname').value;
+        brokeremail = document.getElementById('advisoremail').value;
+        brokertel = document.getElementById('advisor-tel').value;
+        //medoption = document.querySelector('input[name="option-radio"]:checked').value;
+        console.log(currentTab);
+        $.ajax({
+            method: "POST",
+            url: "includes/groupsaves.php",
+			//url: "{{ URL::to('includes/groupsaves.js') }}",
+            data: {currenttab: currenttab, userId: userId, medicalstart: medicalstart, capturedby: capturedby, brokercode: brokercode, brokeragename: brokeragename, brokername: brokername, brokeremail: brokeremail, brokertel: brokertel, paypointcode: paypointcode }
+            })
+            .done(function( response ) {
+                 //alert(response);
+                response1 = JSON.parse(response);
+                console.log(response1);
+                toastr.options = {
+                    "closeButton": true,
+                    "newestOnTop": true,
+                    "positionClass": "toast-top-center"
+                  };
+                toastr.success(response1['message']);
+                userId = response1['userId'];
+                document.getElementById('userid').value = userId;
+            });
+    }
+
+    if(currentTab == 1)
+    {
+        currenttab = currentTab;
+        userId = document.getElementById('userid').value;
+        policyoption = document.querySelector('input[name="option-radio"]:checked').value;
+        incomeband = document.getElementById('incomeband');
+        boncapupload = document.getElementById('boncap_upload');
+
+        if(null != incomeband)
+        {
+            incomeband = document.getElementById('incomeband').value;
+        }else{
+            incomeband = '';
+        }
+
+        if(null != boncapupload)
+        {
+            boncapupload = document.getElementById('boncap_upload').value;
+        }else{
+            boncapupload = '';
+        }
+
+        console.log("ID: " + userId + "Income Band Option : " + incomeband + "Filename : " + boncapupload);
+        $.ajax({
+            method: "POST",
+            url: "/includes/groupsaves.php",
+            data: {currenttab: currenttab, userId: userId, policyoption: policyoption, incomeband: incomeband, boncapupload: boncapupload}
+            })
+            .done(function( response ) {
+                toastr.options = {
+                    "closeButton": true,
+                    "newestOnTop": true,
+                    "positionClass": "toast-top-center"
+                  };
+                toastr.success(response);
+                console.log(response)
+            });
+    }
+
+    if(currentTab == 2)
+    {
+        currenttab = currentTab;
+        userId = document.getElementById('userid').value;
+        mainIdnumber = document.getElementById('mianid-number').value;
+        taxnum = document.getElementById('taxnum').value;
+        maintitle = document.getElementById('main-title').value;
+        mainsurname = document.getElementById('main-surname').value;
+        mainfirstname = document.getElementById('main-firstname').value;
+        mainemployer = document.getElementById('main-employer').value;
+        employeenum = document.getElementById('main-employeeNumber').value;
+        empdate = document.getElementById('main-employeDate').value;
+        department = document.getElementById('main-department').value;
+        mainmarital = document.getElementById('main-marital').value;
+        gender = document.querySelector('input[name="mgender-radio"]:checked').value;
+        race = document.getElementById('m-race').value;
+        dependents = document.querySelector('input[name="m-deps-radio"]:checked').value;
+        comm_method = document.querySelector('input[name="comm-method"]:checked').value;
+        cellphone = document.getElementById('m-cell').value;
+        hometel = document.getElementById('m-telh').value;
+        email = document.getElementById('m-email').value;
+        streetnum = document.getElementById('m-psnum').value;
+        streetname = document.getElementById('m-psname').value;
+        streettype = document.getElementById('m-pstype').value;
+        suburb = document.getElementById('m-psuburb').value;
+        postalcode = document.getElementById('m-postalcode').value;
+    
+        $.ajax({
+            method: "POST",
+            url: "/includes/groupsaves.php",
+            data: {currenttab: currenttab, userId: userId,
+                taxnum : taxnum, mainIdnumber: mainIdnumber, 
+                maintitle: maintitle, mainsurname: mainsurname, 
+                mainfirstname: mainfirstname,  mainemployer: mainemployer, employeenum: employeenum, empdate:empdate, department: department, mainmarital: mainmarital,
+                gender: gender, cellphone: cellphone, hometel: hometel, race: race, dependents: dependents, email: email, streetnum: streetnum,
+                streetname: streetname, streettype: streettype, suburb: suburb, postalcode: postalcode, comm_method: comm_method
+            }
+        })
+        .done(function( response ){
+            toastr.options = {
+                "closeButton": true,
+                "newestOnTop": true,
+                "positionClass": "toast-top-center"
+              };
+            toastr.success(response);
+        });
+    
+    
+    }
+
+    if(depsconst == 'yes' && currentTab == 3)
+    {
+        currenttab = currentTab;
+        userId = document.getElementById('userid').value;
+        var counter2 = document.querySelectorAll('.depstart').length;
+        counter = 1;
+        var value = new Array();
+        var depArray = new Array();
+        while(counter <= counter2)
+        {
+            title = document.getElementById('dep'+counter+'-title').value;
+            idnum = document.getElementById('d'+counter+'-idpass').value;
+            firstname = document.getElementById('d'+counter+'-firstname').value;
+            surname = document.getElementById('d'+counter+'-surname').value;
+            dob = document.getElementById('d'+counter+'-dob').value;
+            marital_status = document.getElementById('d'+counter+'-marital').value;
+            race = document.getElementById('d'+counter+'-race').value;
+            // gender = document.querySelector('input[name="d'+counter+'-gender-radio"]:checked').value;
+            relationship = document.getElementById('d'+counter+'-rel').value;
+            contact = document.getElementById('d'+counter+'-contact').value;
+            taxnum = document.getElementById('d'+counter+'tax').value;
+
+            if(title || idnum || firstname || surname || dob || marital_status || race || gender || relationship || contact || taxnum)
+            {
+                if(!title)
+                {
+                    title = '';
+                }
+
+                if(!idnum)
+                {
+                    idnum = '';
+                    gender = '';
+                }else{
+                    gender = document.querySelector('input[name="d'+counter+'-gender-radio"]:checked').value;
+                }
+
+                if(!firstname)
+                {
+                    firstname = '';
+                }
+
+                if(!surname)
+                {
+                    surname = '';
+                }
+
+                if(!dob)
+                {
+                    dob = '';
+                }
+
+                if(!marital_status)
+                {
+                    marital_status = '';
+                }
+
+                if(!race)
+                {
+                    race = '';
+                }
+
+                // if(!gender)
+                // {
+                //     gender = '';
+                // }
+
+                if(!relationship)
+                {
+                    relationship = '';
+                }
+
+                if(!contact)
+                {
+                    contact = '';
+                }
+                
+                if(!taxnum)
+                {
+                    taxnum = '';
+                }
+               
+                if(idnum != '' && idnum != null )
+                {
+                    value= [title, idnum, firstname, surname, dob, marital_status, race, gender, relationship, contact, taxnum];
+                    depArray.push(value);
+                }
+
+            }
+           
+            counter++
+        }
+        optionsconst = document.getElementById('optionsconstinp').value;
+        console.log("Optionsconst GJS : " + optionsconst)
+        console.log(depArray);
+            $.ajax({
+                method: "POST",
+                url: "/includes/groupsaves.php",
+                data: {currenttab: currenttab, userId: userId, counter: counter2,
+                        depArray: depArray, depsconst: depsconst, optionsconst: optionsconst
+                }
+
+            })
+            .done(function( response ){
+                toastr.options = {
+                    "closeButton": true,
+                    "newestOnTop": true,
+                    "positionClass": "toast-top-center"
+                  };
+                toastr.success(response);
+                console.log(response)
+            });
+    }
+
+    if((depsconst == 'no' && currentTab == 3) || (depsconst == 'yes' && currentTab == 4))
+    {
+        currenttab = currentTab;
+        userId = document.getElementById('userid').value;
+        refundbank = document.getElementById('refund-bankname').value;
+        refundaccholder = document.getElementById('refund-accholdname').value;
+        refundaccnum = document.getElementById('refund-accnum').value;
+        refundacctype = document.getElementById('refund-acctype').value;
+        //console.log(banking)
+        $.ajax({
+            method: "POST",
+            url: "/includes/groupsaves.php",
+            data: {
+                currenttab: currenttab, userId: userId, depsconst: depsconst, refundbank : refundbank, refundaccholder: refundaccholder, refundaccnum: refundaccnum, refundacctype: refundacctype, optionsconst: optionsconst
+            }
+        })
+        .done(function( response ){
+            toastr.options = {
+                "closeButton": true,
+                "newestOnTop": true,
+                "positionClass": "toast-top-center"
+              };
+            toastr.success(response);
+        });
+        console.log(currentTab);
+    }
+
+    if((depsconst == 'no' && currentTab == 4) || (depsconst == 'yes' && currentTab == 5)){
+        currenttab = currentTab;
+        console.log("Current Tab GP Noms : " + currentTab);
+        console.log("Depsconst  :" + depsconst);
+        console.log("Optionsconst : " + optionsconst);
+        userId = document.getElementById('userid').value;
+        var counter2 = document.querySelectorAll('.gpnom').length;
+        counter = 1;
+        var value = new Array();
+        var gpnArray = new Array();
+        while(counter <= counter2)
+        {
+            if(!document.getElementById('gpnom'+counter+'-namesurname').value)
+            {
+                fullname = null;
+            }else{
+                fullname = document.getElementById('gpnom'+counter+'-namesurname').value;
+            }
+
+            if(!document.getElementById('gpnom'+counter+'-firstdocname').value)
+            {
+                firstdocname = null;
+            }else{
+                firstdocname = document.getElementById('gpnom'+counter+'-firstdocname').value;
+            }
+
+            if(!document.getElementById('gpnom'+counter+'-firstdocpnumber').value)
+            {
+                firstdocpnum = null;
+            }else{
+                firstdocpnum = document.getElementById('gpnom'+counter+'-firstdocpnumber').value;
+            }
+
+            if(!document.getElementById('gpnom'+counter+'-seconddocname').value)
+            {
+                seconddocname = null;
+            }else{
+                seconddocname = document.getElementById('gpnom'+counter+'-seconddocname').value;
+            }
+
+            if(!document.getElementById('gpnom'+counter+'-seconddocpnumber').value)
+            {
+                seconddocpnum = null;
+            }else{
+                seconddocpnum = document.getElementById('gpnom'+counter+'-seconddocpnumber').value;
+            }
+
+            if((fullname != '' && fullname != null) || (firstdocname != '' && firstdocname != null))
+            {
+                value= [fullname, firstdocname, firstdocpnum, seconddocname, seconddocpnum]; 
+                gpnArray.push(value); 
+            }
+
+            counter++;
+        }
+        $.ajax({
+            method: "POST",
+            url: "/includes/groupsaves.php",
+            data: {
+                currenttab : currenttab,
+                userId: userId,
+                gpnArray: gpnArray,
+                depsconst : depsconst,
+                optionsconst : optionsconst,
+                counter: counter2
+            }
+        })
+        .done(function ( response ){
+            toastr.options = {
+                "closeButton": true,
+                "newestOnTop": true,
+                "positionClass": "toast-top-center"
+              };
+             toastr.success("Saved Successfully!");
+            console.log(response)
+        });
+    }
+
+    if(currentTab == 7  ||  currentTab == 8 || currentTab == 9){
+        console.log("Final Step : " + currentTab);
+        getOptionValue = document.querySelector('input[name="option-radio"]:checked').value;
+        optionsconst = '';
+        optionsexists = document.getElementById('gplocmenu');
+
+        // console log options details uncomment to view
+        // console.log(optionsexists);
+        // console.log(getOptionValue);
+
+        // check if gp nominations should be active or not
+        if (getOptionValue !== 'PL021' || getOptionValue !== 'PL469' || getOptionValue !== 'PL471' || getOptionValue !==
+            'PL470') {
+
+            optionsconst = 'all';
+        }
+        if (getOptionValue == 'PL021' || getOptionValue == 'PL469' || getOptionValue == 'PL471' || getOptionValue ==
+            'PL470') {
+            optionsconst = 'select';
+        }
+        console.log("Final Option : " + optionsconst);
+        if(optionsconst === 'select')
+        {
+            currenttab = currentTab;
+            userId = document.getElementById('userid').value;
+
+            if(!document.getElementById('tcagree').value)
+            {
+                terms_agreement = '';
+            }else{
+                terms_agreement = document.getElementById('tcagree').value;
+            }
+
+            if(!document.getElementById('advisor-date').value)
+            {
+                advisor_dates = '';
+            }else{
+                advisor_dates = document.getElementById('advisor-date').value;
+            }
+
+            if(!document.getElementById('advisor-memfullname').value)
+            {
+                advisor_memfullname = '';
+            }else{
+                advisor_memfullname = document.getElementById('advisor-memfullname').value;
+            }
+
+            if(!document.getElementById('memdeclare').value)
+            {
+                mem_declaration = '';
+            }else{
+                mem_declaration = document.getElementById('memdeclare').value;
+            }
+            if(!document.getElementById('popi').value)
+            {
+                popi = '';
+            }else{
+                popi = document.getElementById('popi').value;
+            }
+
+            if(terms_agreement != '' || advisor_dates != '' || advisor_memfullname != '' || mem_declaration != '' || popi != '')
+            {
+                $.ajax({
+                    method: "POST",
+                    url: "/includes/groupsaves.php",
+                    data: {
+                        currenttab : currenttab,
+                        userId: userId,
+                        terms_agreement: terms_agreement,
+                        advisor_dates: advisor_dates,
+                        advisor_memfullname: advisor_memfullname,
+                        mem_declaration: mem_declaration,
+                        depsconst : depsconst,
+                        optionsconst : optionsconst,
+                        popi: popi
+                    }
+                })
+                .done(function ( response ){
+                    toastr.options = {
+                        "closeButton": true,
+                        "newestOnTop": true,
+                        "positionClass": "toast-top-center"
+                    };
+                    toastr.success(response);
+                });
+            }
+        }
+    }
+}

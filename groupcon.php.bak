@@ -1,0 +1,119 @@
+<?php 
+
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "doss_hub";
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+if ($conn->connect_error) {
+  die("Connection failed: " . $conn->connect_error);
+}
+
+
+$tbl_advisor = "CREATE TABLE IF NOT EXISTS grp_advisors(
+    user_id int primary key auto_increment, 
+    medstart_date date, 
+    capturedby text(150), 
+    brokercode text(150),
+    paypointcode text, 
+    brokeragename text(150), 
+    brokername text(150), 
+    brokeremail text(150), 
+    brokertel int(15),
+    status int default(0),
+    reference_id varchar(50) default(0),
+    membership_num int default(0),
+    terms_agreement varchar(20),
+    advisor_dates date,
+    advisor_memfullname varchar(50),
+    mem_declaration varchar(20),
+    errormessage JSON,
+    errorcode varchar(255),
+    created_at date,
+    updated_at date
+    /* option_radio text(25),  */
+  )";
+
+$tbl_members = "CREATE TABLE IF NOT EXISTS grp_members(
+    tbl_id int primary key auto_increment,
+    user_id int,
+    mainid_number text(15),
+    taxnum text,
+    main_title text(15), 
+    main_surname text(50), 
+    main_firstname text(50),
+    employername text(50),
+    employeenum text(50),
+    empdate date,
+    department text,
+    main_marital text(10), 
+    mgender_radio text(10), 
+    m_race varchar(25),
+    m_deps_radio varchar(10),
+    m_cell varchar(20),
+    m_telh varchar (20),
+    m_email varchar(150),
+    m_psnum varchar(25),
+    m_psname varchar(100),
+    m_pstype varchar(100),
+    m_psuburb varchar(100),
+    m_postalcode varchar(100)
+)";
+
+$tbl_dependents = "CREATE TABLE IF NOT EXISTS grp_dependents(
+    id int primary key auto_increment,
+    user_id int,
+    dep_title text(20),
+    d_idpass text(20),
+    d_firstname text(50),
+    d_surname text(50),
+    d_dob text(20),
+    d_marital text(20),
+    d_race text(20),
+    d_gender_radio text(20),
+    d_rel text(20),
+    d_contact text(20),
+    d_tax text(20)
+)";
+
+$tbl_banks_refunds = "CREATE TABLE IF NOT EXISTS grp_banks_refunds(
+  id int primary key auto_increment,
+  user_id int,
+  bankname varchar(50),
+  accholder varchar(50),
+  accnum varchar(50),
+  acctype varchar(50)
+)";
+
+$tbl_gpnominations = "CREATE TABLE IF NOT EXISTS grp_gpnominations(
+  id int primary key auto_increment,
+  user_id int,
+  fullname varchar(50),
+  firstdocname varchar(50),
+  firstdocpnum varchar(50),
+  seconddocname varchar(50),
+  seconddocpnum varchar(50)
+)";
+
+
+if ($conn->query($tbl_advisor) === FALSE) {
+  echo "Error creating table: " . $conn->error;
+}
+if ($conn->query($tbl_members) === FALSE) {
+    echo "Error creating table: " . $conn->error;
+}
+
+if ($conn->query($tbl_dependents) === FALSE) {
+  echo "Error creating table: " . $conn->error;
+}
+
+if ($conn->query($tbl_banks_refunds) === FALSE) {
+  echo "Error creating table: " . $conn->error;
+}
+
+if($conn->query($tbl_gpnominations) === FALSE){
+  echo "Error creating table: " . $conn->error;
+}
+
+?>

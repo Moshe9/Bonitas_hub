@@ -1,0 +1,152 @@
+{
+    "membershipApplication": {
+        "messageHeader": {
+            "identifier": "2b51021d-18a7-4e16-86e1-1110e9af12ad",
+            "version": "1.0",
+            "timestamp": "2020-08-27T09:18:03.8239451+02:00",
+            "author": {
+                "name": "WEBUSER"
+            },
+            "processAsCleanApp": false,
+            "attachedDocs": false,
+            "source": {
+                "name": "EXTRANET",
+                "endpoint": "http://www.fedhealth.co.za/"
+            },
+            "destination": {
+                "name": "Helios ITS",
+                "endpoint": "http://heliosits.com/soa/rest/"
+            }
+        },
+        "messagePayload": {
+            "scheme": {
+                "schemeCode": "FDH",
+                "joinDate": "2022-08-01",
+                "option": "PL824"
+            },
+            "intermediary": {
+                "intermediaryCode": "WWX08",
+                "intermediaryName": "Wellworx",
+                "contact": {
+                    "contactType": "email",
+                    "contactValue": "bonginkosi@welworx.co.za"
+                },
+                "paypoint": "FDH514DPM"
+            },
+            "beneficiary": [
+                {
+                    "memberType": "PM",
+                    "relationshipToPrimaryMember": "SELF",
+                    "title": "MS",
+                    "firstNames": "ELLEN TSHEPANG",
+                    "initials": "ET",
+                    "surname": "MTHOMBENI",
+                    "gender": "F",
+                    "dateOfBirth": "1992-04-06",
+                    "identification": {
+                        "idType": "RSA",
+                        "idNumber": "9204060692083"
+                    },
+                    "language": "ENG",
+                    "ethnicity": "B",
+                    "maritalStatus": "S",
+                    "contact": [
+                        {
+                            "contactType": "personalMobile",
+                            "contactValue": "0797169870"
+                        },
+                        {
+                            "contactType": "workPhone",
+                            "contactValue": "0797169870"
+                        },
+                        {
+                            "contactType": "workEmail",
+                            "contactValue": "Mthombeni92za@gmail.com"
+                        },
+                        {
+                            "contactType": "homePhone",
+                            "contactValue": "0797169870"
+                        }
+                    ],
+                    "address": [
+                        {
+                            "addressType": "residentialAddress",
+                            "streetName": "AUTUMM LEAF",
+                            "streetNumber": "28",
+                            "streetType": "STR",
+                            "suburb": "RUSTENBU",
+                            "postalCode": "0299",
+                            "townCode": "18162",
+                            "poBox": null,
+                            "buildingName": null,
+                            "streetSuffix": null,
+                            "suiteNumber": null
+                        },
+                        {
+                            "addressType": "postalAddress",
+                            "streetName": "Array",
+                            "streetNumber": "28",
+                            "streetType": "STR",
+                            "suburb": "RUSTENBU",
+                            "postalCode": "0299",
+                            "townCode": "18162",
+                            "poBox": null,
+                            "buildingName": null,
+                            "streetSuffix": null,
+                            "suiteNumber": null
+                        }
+                    ],
+                    "conditions": {
+                        "condition": [
+                            {
+                                "questionCode": "66",
+                                "conditionCode": null,
+                                "detail": "Asthma",
+                                "current": "Y",
+                                "lastTreatmentDate": "2022-08-15",
+                                "receivedTreatment": "Y",
+                                "treatingDoctor": "",
+                                "conditionResolved": null
+                            },
+                            {
+                                "questionCode": "",
+                                "conditionCode": null,
+                                "detail": "",
+                                "current": "",
+                                "lastTreatmentDate": "",
+                                "receivedTreatment": "",
+                                "treatingDoctor": "",
+                                "conditionResolved": null
+                            }
+                        ]
+                    }"previousMedicalAid": [],
+                }
+            ],
+            "bankAccounts": {
+                "bankAccount": [
+                    {
+                        "usage": "A",
+                        "bankName": "FNB",
+                        "bankCode": "FNB",
+                        "branchName": "BRANCH 560",
+                        "branchCode": 250655,
+                        "accountHolderName": "ELLEN TSHEPANG MTHOMBENI",
+                        "accountType": "SAVINGS",
+                        "accountNumber": "62318003887"
+                    },
+                    {
+                        "usage": "A",
+                        "bankName": "FNB",
+                        "bankCode": "FNB",
+                        "branchName": "BRANCH 560",
+                        "branchCode": 250655,
+                        "accountHolderName": "ELLEN TSHEPANG MTHOMBENI",
+                        "accountType": "SAVINGS",
+                        "accountNumber": "62318003887"
+                    }
+                ]
+            },
+        },
+        "Errors": []
+    }
+}
